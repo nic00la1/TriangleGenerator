@@ -12,52 +12,70 @@
     <option value="reversedTriangle">Trójkąt odwrócony</option>
     <option value="square">Kwadrat</option>
     <option value="rectangle">Prostokąt</option>
+    <option value="circle">Koło</option>
   </select>
 </div>
 
-<!-- Triangle -->
-<div *ngIf="selectedFigure === 'triangle'">
-  <p>Generator trójkąta</p>
-  <div>
-    <label for="triangleSize">Podaj wielkość trójkąta:</label>
-    <input type="number" id="triangleSize" [(ngModel)]="triangleSize" class="m-2" />
-    <button (click)="generateTriangle()" class="my-button">Generuj</button>
-  </div>
-  <pre class="my-container text-bg-secondary fw-bold">{{ triangle }}</pre>
-</div>
+<!-- Figure Generator -->
+<div *ngIf="selectedFigure">
+  <ng-container [ngSwitch]="selectedFigure">
+    <!-- Triangle -->
+    <div *ngSwitchCase="'triangle'">
+      <p>Generator trójkąta</p>
+      <div>
+        <label for="triangleSize">Podaj wielkość trójkąta:</label>
+        <input type="number" id="triangleSize" [(ngModel)]="triangleSize" class="m-2" />
+        <button (click)="generateTriangle()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ triangle }}</pre>
+    </div>
 
-<!-- Reversed Triangle -->
-<div *ngIf="selectedFigure === 'reversedTriangle'">
-  <p>Generator trójkąta odwróconego</p>
-  <div>
-    <label for="reversedTriangleSize">Podaj wielkość trójkąta odwróconego:</label>
-    <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" class="m-2"/>
-    <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
-  </div>
-  <pre class="my-container text-bg-secondary fw-bold">{{ reversedTriangle }}</pre>
-</div>
+    <!-- Reversed Triangle -->
+    <div *ngSwitchCase="'reversedTriangle'">
+      <p>Generator trójkąta odwróconego</p>
+      <div>
+        <label for="reversedTriangleSize">Podaj wielkość trójkąta odwróconego:</label>
+        <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" class="m-2"/>
+        <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ reversedTriangle }}</pre>
+    </div>
 
-<!-- Square -->
-<div *ngIf="selectedFigure === 'square'">
-  <p>Generator kwadratu</p>
-  <div>
-    <label for="squareSize">Podaj wielkość kwadratu:</label>
-    <input type="number" id="squareSize" [(ngModel)]="squareSize" class="m-2"/>
-    <button (click)="generateSquare()" class="my-button">Generuj</button>
-  </div>
-  <pre class="my-container text-bg-secondary fw-bold">{{ square }}</pre>
-</div>
+    <!-- Square -->
+    <div *ngSwitchCase="'square'">
+      <p>Generator kwadratu</p>
+      <div>
+        <label for="squareSize">Podaj wielkość kwadratu:</label>
+        <input type="number" id="squareSize" [(ngModel)]="squareSize" class="m-2"/>
+        <button (click)="generateSquare()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ square }}</pre>
+    </div>
 
-<!-- Rectangle -->
-<div *ngIf="selectedFigure === 'rectangle'">
-  <p>Generator prostokąta</p>
-  <div>
-    <label for="rectangleWidth">Podaj szerokość prostokąta:</label>
-    <input type="number" id="rectangleWidth" [(ngModel)]="rectangleWidth" class="m-2"/>
-    <br/>
-    <label for="rectangleHeight">Podaj wysokość prostokąta:</label>
-    <input type="number" id="rectangleHeight" [(ngModel)]="rectangleHeight" class="m-2"/>
-    <br/>
-    <button (click)="generateRectangle()" class="my-button">Generuj</button>
-    <pre class="my-container text-bg-secondary fw-bold">{{ rectangle }}</pre>
+    <!-- Rectangle -->
+    <div *ngSwitchCase="'rectangle'">
+      <p>Generator prostokąta</p>
+      <div>
+        <label for="rectangleWidth">Podaj szerokość prostokąta:</label>
+        <input type="number" id="rectangleWidth" [(ngModel)]="rectangleWidth" class="m-2"/>
+        <br/>
+        <label for="rectangleHeight">Podaj wysokość prostokąta:</label>
+        <input type="number" id="rectangleHeight" [(ngModel)]="rectangleHeight" class="m-2"/>
+        <br/>
+        <button (click)="generateRectangle()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ rectangle }}</pre>
+    </div>
+
+    <!-- Circle -->
+    <div *ngSwitchCase="'circle'">
+      <p>Generator koła</p>
+      <div>
+        <label for="circleSize">Podaj wielkość koła:</label>
+        <input type="number" id="circleSize" [(ngModel)]="circleRadius" class="m-2"/>
+        <button (click)="generateCircle()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ circle }}</pre>
+    </div>
+  </ng-container>
 </div>

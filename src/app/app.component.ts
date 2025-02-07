@@ -25,6 +25,9 @@ export class AppComponent {
   rectangleHeight: number = 0;
   rectangle: string = '';
 
+  circle = '';
+  circleRadius: number = 0;
+
   // Reset all figures
   resetAllFigures() {
     this.triangleSize = 0;
@@ -36,6 +39,8 @@ export class AppComponent {
     this.rectangle = '';
     this.rectangleWidth = 0;
     this.rectangleHeight = 0;
+    this.circle = '';
+    this.circleRadius = 0;
   }
 
   // Generate triangle
@@ -67,6 +72,23 @@ export class AppComponent {
     this.rectangle = '';
     for (let i = 1; i <= this.rectangleHeight; i++) {
       this.rectangle += '*'.repeat(this.rectangleWidth) + '\n';
+    }
+  }
+
+  // Generate circle
+  generateCircle() {
+    this.circle = '';
+    let radius = this.circleRadius;
+    for (let i = 0; i <= 2 * radius; i++) {
+      for (let j = 0; j <= 2 * radius; j++) {
+        let distance = Math.sqrt((i - radius) * (i - radius) + (j - radius) * (j - radius));
+        if (distance > radius - 0.5 && distance < radius + 0.5) {
+          this.circle += '*';
+        } else {
+          this.circle += ' ';
+        }
+      }
+      this.circle += '\n';
     }
   }
 }
