@@ -1,12 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'TriangleGenerator';
+  triangleSize: number = 0;
+  triangle: string = '';
+
+  generateTriangle() {
+    this.triangle = '';
+    for (let i = 1; i <= this.triangleSize; i++) {
+      this.triangle += '*'.repeat(i) + '\n';
+    }
+  }
 }
