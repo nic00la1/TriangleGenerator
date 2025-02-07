@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'TriangleGenerator';
+  selectedFigure: string = 'triangle';
+
 
   triangleSize: number = 0;
   triangle: string = '';

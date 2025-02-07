@@ -1,33 +1,48 @@
 <!-- Normal triangle -->
- <div class="my-container">
+<div class="my-container">
   <h1>Generator figur</h1>
   <button class="btn btn-danger" (click)="resetAllFigures()">Resetuj figury</button>  
- </div>
-
-<p>Generator trójkąta</p>
-<div>
-  <label for="triangleSize">Podaj wielkość trójkąta:</label>
-  <input type="number" id="triangleSize" [(ngModel)]="triangleSize" class="m-2" />
-  <button (click)="generateTriangle()" class="my-button">Generuj</button>
 </div>
-<pre class="my-container">{{ triangle }}</pre>
 
-<!-- Reversed triangle -->
-<p>Generator trójkąta odwróconego</p>
+<!-- Figure Selector -->
 <div>
-  <label for="reversedTriangleSize">Podaj wielkość trójkąta odwróconego:</label>
-  <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" class="m-2"/>
-  <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
+  <label for="figureType">Wybierz figurę:</label>
+  <select id="figureType" [(ngModel)]="selectedFigure" class="m-2">
+    <option value="triangle">Trójkąt</option>
+    <option value="reversedTriangle">Trójkąt odwrócony</option>
+    <option value="square">Kwadrat</option>
+  </select>
 </div>
-<pre class="my-container">{{ reversedTriangle }}</pre>
 
+<!-- Triangle -->
+<div *ngIf="selectedFigure === 'triangle'">
+  <p>Generator trójkąta</p>
+  <div>
+    <label for="triangleSize">Podaj wielkość trójkąta:</label>
+    <input type="number" id="triangleSize" [(ngModel)]="triangleSize" class="m-2" />
+    <button (click)="generateTriangle()" class="my-button">Generuj</button>
+  </div>
+  <pre class="my-container text-bg-secondary fw-bold">{{ triangle }}</pre>
+</div>
+
+<!-- Reversed Triangle -->
+<div *ngIf="selectedFigure === 'reversedTriangle'">
+  <p>Generator trójkąta odwróconego</p>
+  <div>
+    <label for="reversedTriangleSize">Podaj wielkość trójkąta odwróconego:</label>
+    <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" class="m-2"/>
+    <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
+  </div>
+  <pre class="my-container text-bg-secondary fw-bold">{{ reversedTriangle }}</pre>
+</div>
 
 <!-- Square -->
-<p>Generator kwadratu</p>
-<div>
-  <label for="squareSize">Podaj wielkość kwadratu:</label>
-  <input type="number" id="squareSize" [(ngModel)]="squareSize" class="m-2"/>
-  <button (click)="generateSquare()" class="my-button">Generuj</button>
+<div *ngIf="selectedFigure === 'square'">
+  <p>Generator kwadratu</p>
+  <div>
+    <label for="squareSize">Podaj wielkość kwadratu:</label>
+    <input type="number" id="squareSize" [(ngModel)]="squareSize" class="m-2"/>
+    <button (click)="generateSquare()" class="my-button">Generuj</button>
+  </div>
+  <pre class="my-container text-bg-secondary fw-bold">{{ square }}</pre>
 </div>
-<pre class="my-container">{{ square }}</pre>
- 
