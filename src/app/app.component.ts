@@ -18,6 +18,9 @@ export class AppComponent {
   reversedTriangleSize: number = 0;
   reversedTriangle: string = '';
 
+  isoscelesTriangleSize: number = 0;
+  isoscelesTriangle: string = '';
+
   squareSize: number = 0;
   square: string = '';
 
@@ -34,6 +37,8 @@ export class AppComponent {
     this.triangle = '';
     this.reversedTriangle = '';
     this.reversedTriangleSize = 0;
+    this.isoscelesTriangle = '';
+    this.isoscelesTriangleSize = 0;
     this.square = '';
     this.squareSize = 0;
     this.rectangle = '';
@@ -59,6 +64,14 @@ export class AppComponent {
     }
   }
 
+  // Generate isosceles Triangle (trójkąt rownoramienny)
+  generateIsoscelesTriangle() {
+    this.isoscelesTriangle = '';
+    for (let i = 1; i <= this.isoscelesTriangleSize; i++) {
+      this.isoscelesTriangle += ' '.repeat(this.isoscelesTriangleSize - i) + '*'.repeat(2 * i - 1) + '\n';
+    }
+  }
+  
   // Generate square
   generateSquare() {
     this.square = '';

@@ -10,6 +10,7 @@
   <select id="figureType" [(ngModel)]="selectedFigure" class="m-2">
     <option value="triangle">Trójkąt</option>
     <option value="reversedTriangle">Trójkąt odwrócony</option>
+    <option value="isoscelesTriangle">Trójkąt równoramienny</option>
     <option value="square">Kwadrat</option>
     <option value="rectangle">Prostokąt</option>
     <option value="circle">Koło</option>
@@ -39,6 +40,17 @@
         <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
       </div>
       <pre class="my-container text-bg-secondary fw-bold">{{ reversedTriangle }}</pre>
+    </div>
+
+    <!-- Isosceles triangle -->
+    <div *ngSwitchCase="'isoscelesTriangle'">
+      <p>Generator trójkąta równoramiennego</p>
+      <div>
+        <label for="isoscelesTriangleSize">Podaj wielkość trójkąta równoramiennego:</label>
+        <input type="number" id="isoscelesTriangleSize" [(ngModel)]="isoscelesTriangleSize" class="m-2"/>
+        <button (click)="generateIsoscelesTriangle()" class="my-button">Generuj</button>
+      </div>
+      <pre class="my-container text-bg-secondary fw-bold">{{ isoscelesTriangle }}</pre>
     </div>
 
     <!-- Square -->
