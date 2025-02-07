@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("https://www.shutterstock.com/image-photo/colorful-abstract-geometric-background-threedimensional-260nw-625388120.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
