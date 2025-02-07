@@ -12,12 +12,23 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'TriangleGenerator';
   triangleSize: number = 0;
+  reversedTriangleSize: number = 0;
   triangle: string = '';
+  reversedTriangle: string = '';
 
+  // Generate triangle
   generateTriangle() {
     this.triangle = '';
     for (let i = 1; i <= this.triangleSize; i++) {
       this.triangle += '*'.repeat(i) + '\n';
+    }
+  }
+
+  // Generate reverse triangle
+  generateReversedTriangle() {
+    this.reversedTriangle = '';
+    for (let i = this.reversedTriangleSize; i >= 1; i--) {
+      this.reversedTriangle += '*'.repeat(i) + '\n';
     }
   }
 }
