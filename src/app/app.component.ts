@@ -16,6 +16,14 @@ export class AppComponent {
   triangle: string = '';
   reversedTriangle: string = '';
 
+  // Reset all figures
+  resetAllFigures() {
+    this.triangleSize = 0;
+    this.reversedTriangleSize = 0;
+    this.triangle = '';
+    this.reversedTriangle = '';
+  }
+
   // Generate triangle
   generateTriangle() {
     this.triangle = '';
