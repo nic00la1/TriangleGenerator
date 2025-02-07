@@ -4,19 +4,30 @@
   <button class="btn btn-danger" (click)="resetAllFigures()">Resetuj figury</button>  
  </div>
 
-<p>Generator trójkąta odwróconego</p>
+<p>Generator trójkąta</p>
 <div>
   <label for="triangleSize">Podaj wielkość trójkąta:</label>
-  <input type="number" id="triangleSize" [(ngModel)]="triangleSize" />
-  <button (click)="generateTriangle()">Generuj</button>
+  <input type="number" id="triangleSize" [(ngModel)]="triangleSize" class="m-2" />
+  <button (click)="generateTriangle()" class="my-button">Generuj</button>
 </div>
-<pre>{{ triangle }}</pre>
+<pre class="my-container">{{ triangle }}</pre>
 
 <!-- Reversed triangle -->
 <p>Generator trójkąta odwróconego</p>
 <div>
   <label for="reversedTriangleSize">Podaj wielkość trójkąta odwróconego:</label>
-  <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" />
-  <button (click)="generateReversedTriangle()">Generuj</button>
+  <input type="number" id="reversedTriangleSize" [(ngModel)]="reversedTriangleSize" class="m-2"/>
+  <button (click)="generateReversedTriangle()" class="my-button">Generuj</button>
 </div>
-<pre>{{ reversedTriangle }}</pre>
+<pre class="my-container">{{ reversedTriangle }}</pre>
+
+
+<!-- Square -->
+<p>Generator kwadratu</p>
+<div>
+  <label for="squareSize">Podaj wielkość kwadratu:</label>
+  <input type="number" id="squareSize" [(ngModel)]="squareSize" class="m-2"/>
+  <button (click)="generateSquare()" class="my-button">Generuj</button>
+</div>
+<pre class="my-container">{{ square }}</pre>
+ 

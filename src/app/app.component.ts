@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +10,24 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'TriangleGenerator';
+
   triangleSize: number = 0;
-  reversedTriangleSize: number = 0;
   triangle: string = '';
+
+  reversedTriangleSize: number = 0;
   reversedTriangle: string = '';
+
+  squareSize: number = 0;
+  square: string = '';
 
   // Reset all figures
   resetAllFigures() {
     this.triangleSize = 0;
-    this.reversedTriangleSize = 0;
     this.triangle = '';
     this.reversedTriangle = '';
+    this.reversedTriangleSize = 0;
+    this.square = '';
+    this.squareSize = 0;
   }
 
   // Generate triangle
@@ -37,6 +43,14 @@ export class AppComponent {
     this.reversedTriangle = '';
     for (let i = this.reversedTriangleSize; i >= 1; i--) {
       this.reversedTriangle += '*'.repeat(i) + '\n';
+    }
+  }
+
+  // Generate square
+  generateSquare() {
+    this.square = '';
+    for (let i = 1; i <= this.squareSize; i++) {
+      this.square += '*'.repeat(this.squareSize) + '\n';
     }
   }
 }
