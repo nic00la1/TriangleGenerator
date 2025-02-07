@@ -1,59 +1,16 @@
-# TriangleGenerator
+# Figures Generator
+## Triangle 
+![image](https://github.com/user-attachments/assets/bdf5c5a5-76cd-447e-a18d-2267b9b0579b)
+## Reversed Triangle 
+![image](https://github.com/user-attachments/assets/502e7b38-4a33-4d0b-87ed-ebe23b793ba3)
+## Isosceles Triangle (PL = Trójkąt równoramienny)
+![image](https://github.com/user-attachments/assets/41da423c-befb-4474-962b-3085eed39a60)
+## Square 
+![image](https://github.com/user-attachments/assets/f680be72-9c03-4b58-804e-2c00297f9ed0)
+## Rectangle
+![image](https://github.com/user-attachments/assets/861dfdc0-0e87-4cfc-ae7a-ad2d0b0e01f7)
+## Circle
+![image](https://github.com/user-attachments/assets/0488c3d4-c71f-4789-b3a9-b42efbdca615)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
 
-## Development server
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
