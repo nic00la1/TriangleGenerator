@@ -12,7 +12,6 @@ export class AppComponent {
   title = 'TriangleGenerator';
   selectedFigure: string = 'triangle';
 
-
   triangleSize: number = 0;
   triangle: string = '';
 
@@ -22,6 +21,10 @@ export class AppComponent {
   squareSize: number = 0;
   square: string = '';
 
+  rectangleWidth: number = 0;
+  rectangleHeight: number = 0;
+  rectangle: string = '';
+
   // Reset all figures
   resetAllFigures() {
     this.triangleSize = 0;
@@ -30,6 +33,9 @@ export class AppComponent {
     this.reversedTriangleSize = 0;
     this.square = '';
     this.squareSize = 0;
+    this.rectangle = '';
+    this.rectangleWidth = 0;
+    this.rectangleHeight = 0;
   }
 
   // Generate triangle
@@ -53,6 +59,14 @@ export class AppComponent {
     this.square = '';
     for (let i = 1; i <= this.squareSize; i++) {
       this.square += '*'.repeat(this.squareSize) + '\n';
+    }
+  }
+  
+  // Generate rectangle
+  generateRectangle() {
+    this.rectangle = '';
+    for (let i = 1; i <= this.rectangleHeight; i++) {
+      this.rectangle += '*'.repeat(this.rectangleWidth) + '\n';
     }
   }
 }

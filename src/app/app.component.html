@@ -11,6 +11,7 @@
     <option value="triangle">Trójkąt</option>
     <option value="reversedTriangle">Trójkąt odwrócony</option>
     <option value="square">Kwadrat</option>
+    <option value="rectangle">Prostokąt</option>
   </select>
 </div>
 
@@ -45,4 +46,18 @@
     <button (click)="generateSquare()" class="my-button">Generuj</button>
   </div>
   <pre class="my-container text-bg-secondary fw-bold">{{ square }}</pre>
+</div>
+
+<!-- Rectangle -->
+<div *ngIf="selectedFigure === 'rectangle'">
+  <p>Generator prostokąta</p>
+  <div>
+    <label for="rectangleWidth">Podaj szerokość prostokąta:</label>
+    <input type="number" id="rectangleWidth" [(ngModel)]="rectangleWidth" class="m-2"/>
+    <br/>
+    <label for="rectangleHeight">Podaj wysokość prostokąta:</label>
+    <input type="number" id="rectangleHeight" [(ngModel)]="rectangleHeight" class="m-2"/>
+    <br/>
+    <button (click)="generateRectangle()" class="my-button">Generuj</button>
+    <pre class="my-container text-bg-secondary fw-bold">{{ rectangle }}</pre>
 </div>
